@@ -1,0 +1,3 @@
+#!/bin/bash
+
+gssh -r '%corpnet-mel2:ACCSW & /^accsw2/' 'show ethernet-switching table | match 64:16:7f:a4:aa:65 '
