@@ -7,6 +7,10 @@ import os.path
 import json
 from cfg_nasa import *
 
+##cfg_nasa holds variable api_key, this was requested from nasa.api.gov, a bit of work needs to be 
+##done on cleaning up the titles for the pic, and cron job from within app
+# set the path to where your os x box is pulling wallpapers, 
+
 def api_call_jsons():
      url = "https://api.nasa.gov/planetary/apod?api_key={0}".format(api_key)
      r = requests.get(url)
