@@ -15,9 +15,14 @@ def api_call_jsons():
      url = "https://api.nasa.gov/planetary/apod?api_key={0}".format(api_key)
      r = requests.get(url)
      response = r.json()
-     high_def_APOD = response.get('hdurl')
-     title_APOD = response.get('title')
-     return {'pic': high_def_APOD, 'titles': title_APOD}
+     pprint(response)
+     try:
+        high_def_APOD = response.get('hdurl')
+        title_APOD = response.get('title')
+     except Exception:
+        print("The json returned by nasa api does not include the proper key value pair. Check back tomorrow.")
+     else: 
+        return {'pic': high_def_APOD, 'titles': title_APOD}
     
 def get_photo_of_the_day(data):
     titles_value = data.get('titles')
