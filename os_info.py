@@ -12,6 +12,7 @@ def os_information():
     print(platform.processor())
     print(platform.mac_ver())
 
+
 def main():
     os_information()
 
